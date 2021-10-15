@@ -6,6 +6,17 @@ provider:
   runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
   region: sa-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+            - dynamodb:UpdateItem
+            - dynamodb:GetItem
+            - dynamodb:scan
+          Resource:
+            - arn:aws:dynamodb:sa-east-1:398721024867:table/ItemTableNew
 
 functions:
   hello:
