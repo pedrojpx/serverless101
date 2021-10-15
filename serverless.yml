@@ -49,6 +49,12 @@ functions:
       - httpApi:
           path: /item/{id}
           method: put
+  deleteitem:
+    handler: src/deleteItem.handler
+    events:
+      - httpApi:
+          path: /item/{id}
+          method: delete
 
 
 resources:
